@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 export default function Login() {
   return (
     <>
+	<div className="cont">
+
 <div className="sub-cont min-h-screen flex flex-col justify-center">
 	<div className="relative py-3 sm:max-w-xl sm:mx-auto">
 			<div 
@@ -38,6 +40,7 @@ export default function Login() {
 		</div>
 	</div>
 </div>
+				</div>
     </>
   )
 }

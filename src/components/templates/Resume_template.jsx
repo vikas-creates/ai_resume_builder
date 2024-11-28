@@ -1,7 +1,11 @@
 import React from 'react'
+import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 export default function Resume_template() {
   return (
+    <>
+    <Navbar/>
     <div className='cont'>
     <main className="font-jost hyphens-manual">
       <section
@@ -16,19 +20,19 @@ export default function Resume_template() {
             </h1>
             <h2
               className="m-0 ml-2 text-2xl font-semibold text-gray-700 leading-snugish"
-            >
+              >
               Full Stack Web Development
             </h2>
             <h3
               className="m-0 mt-2 ml-2 text-xl font-semibold text-gray-500 leading-snugish"
-            >
+              >
               San Francisco, California
             </h3>
           </section>
           <section
             className="justify-between px-3 mt-0 mb-5 text-4xl font-black leading-none text-white bg-gray-700 initials-container print:bg-black"
             style={{paddingBottom:"1.5rem", paddingTop:"1.5rem" }}
-          >
+            >
             <section className="text-center initial">T</section>
             <section className="text-center initial">L</section>
             <section className="text-center initial">H</section>
@@ -36,14 +40,14 @@ export default function Resume_template() {
         </header>
         <section
           className="col-gap-8 print:col-count-2 print:h-letter-col-full col-fill-balance md:col-count-2 md:h-letter-col-full"
-        ><section className="flex-col">
+          ><section className="flex-col">
           <section className="pb-2 mt-4 mb-0 first:mt-0">
             <section className="break-inside-avoid">
               <section className="pb-4 mb-2 border-b-4 border-gray-300 break-inside-avoid">
                 <ul className="pr-7 list-inside">
                   <li
                     className="mt-1 leading-normal text-black text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md print:"
-                  >
+                    >
                     <a href="https://veilmail.io/irish-geoff
             " className="group">
                       <span
@@ -55,14 +59,14 @@ export default function Resume_template() {
             
                       <span
                         className="inline-block font-normal text-black text-gray-500 transition duration-100 ease-in group-hover:text-gray-700 print:text-black print:"
-                      >
+                        >
                         ↗
                       </span>
                     </a>
                   </li>
                   <li
                     className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md"
-                  >
+                    >
                     <a href="https://github.com/Thomashighbaugh" className="group">
                       <span
                         className="mr-5 text-lg font-semibold text-gray-700 leading-snugish"
@@ -72,7 +76,7 @@ export default function Resume_template() {
                       Thomashighbaugh
                       <span
                         className="inline-block font-normal text-black text-gray-500 transition duration-100 ease-in group-hover:text-gray-700 print:text-black print:"
-                      >
+                        >
                         ↗
                       </span>
                     </a>
@@ -80,29 +84,29 @@ export default function Resume_template() {
 
                   <li
                     className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md"
-                  >
+                    >
                     <a href="		    https://veilmail.io/irish-geoff" className="group">
                       <span
                         className="mr-8 text-lg font-semibold text-gray-700 leading-snugish"
-                      >
+                        >
                         Email:
                       </span>
 		    https://veilmail.io/irish-geoff
             
                       <span
                         className="inline-block font-normal text-gray-500 transition duration-100 ease-in group-hover:text-gray-700 print:text-black"
-                      >
+                        >
                         ↗
                       </span>
                     </a>
                   </li>
                   <li
                     className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md"
-                  >
+                    >
                     <a href="tel:+15109070654">
                       <span
                         className="mr-5 text-lg font-semibold text-gray-700 leading-snugish"
-                      >
+                        >
                         Phone:
                       </span>
                       +1(510)907-0654
@@ -116,7 +120,7 @@ export default function Resume_template() {
             <section className="break-inside-avoid">
               <h2
                 className="mb-2 text-xl font-bold tracking-widest text-gray-700 print:font-normal"
-              >
+                >
                 SUMMARY
               </h2>
 
@@ -131,7 +135,7 @@ export default function Resume_template() {
     <section className="break-inside-avoid">
         <h2
             className="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal"
-        >
+            >
             EDUCATION
         </h2>
         <section className="mt-2 border-b-2 break-inside-avoid">
@@ -157,7 +161,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         Minor:
                     </span>
                     Economics
@@ -165,7 +169,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         GPA:
                     </span>
                     3.9
@@ -173,7 +177,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         Skills:
                     </span>
                     Research, Analysis, Critical Thinking, Communication
@@ -196,7 +200,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         Major:
                     </span>
                     Computer Science
@@ -204,7 +208,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         GPA:
                     </span>
                     4.0
@@ -212,7 +216,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         Skills:
                     </span>
                     Programming, Algorithms, Data Structures, Software Development
@@ -223,7 +227,7 @@ export default function Resume_template() {
             <header>
                 <h3
                     className="flex-grow text-lg font-semibold text-gray-700 leading-snugish"
-                >
+                    >
                     Codify Academy
                 </h3>
                 <p className="leading-normal text-gray-500 text-md">
@@ -242,7 +246,7 @@ export default function Resume_template() {
                 <li>
                     <span
                         className="font-semibold text-md"
-                    >
+                        >
                         Skills:
                     </span>
                     HTML, CSS, JavaScript, Web Development
@@ -255,7 +259,7 @@ export default function Resume_template() {
               <section className="break-inside-avoid">
                 <h2
                   className="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal"
-                >
+                  >
                   SKILLS
                 </h2>
                 <section className="mb-0 break-inside-avoid">
@@ -436,5 +440,7 @@ LLM/AI Prompting
       </section>
     </main>
     </div>
+    <Footer/>
+                  </>
   )
 }

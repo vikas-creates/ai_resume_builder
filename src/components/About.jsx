@@ -1,7 +1,11 @@
 import React from 'react';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 const About = () => {
   return (
+    <>
+    <Navbar/>
     <div className="bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 text-gray-800 dark:text-white py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-600 dark:text-blue-400">
@@ -56,7 +60,7 @@ const About = () => {
               src="https://via.placeholder.com/600x400"
               alt="AI Generated Resume Example"
               className="rounded-lg shadow-lg hover:scale-105 transition transform duration-300"
-            />
+              />
           </div>
         </section>
 
@@ -75,6 +79,8 @@ const About = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+              </>
   );
 };
 

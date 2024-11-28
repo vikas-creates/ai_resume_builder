@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Assuming you're using react-router for navigation
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Home = () => {
   return (
+    <>
+      <Navbar/>
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-500 to-indigo-500 py-20 px-4 sm:px-6 lg:px-8">
@@ -17,7 +21,7 @@ const Home = () => {
           <Link
             to="/signup"
             className="mt-6 inline-block text-white bg-blue-600 hover:bg-blue-700 py-2 px-4"
-          >
+            >
             Get Started
           </Link>
         </div>
@@ -66,6 +70,8 @@ const Home = () => {
         </div>
       </section>
     </div>
+    <Footer/>
+            </>
   );
 };
 
