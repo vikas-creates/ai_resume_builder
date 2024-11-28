@@ -75,12 +75,12 @@ const Navbar = () => {
                 <ul className="space-y-2 p-2">
                   <li>
                     <button className="w-full text-left hover:bg-gray-100 dark:hover:bg-gray-600 rounded-md p-2 transition duration-200">
-                      <Link to="/templates" >Fresher Templates</Link>
+                      <Link to="/templates/fresher" >Fresher Templates</Link>
                     </button>
                   </li>
                   <li>
                     <button className="w-full text-left hover:bg-gray-100 dark:hover:bg-gray-600 rounded-md p-2 transition duration-200">
-                      Experienced Templates
+                    <Link to="/templates/experienced" >Experienced Templates</Link>
                     </button>
                   </li>
                 </ul>
