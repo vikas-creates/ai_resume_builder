@@ -47,13 +47,13 @@ const Navbar = () => {
       <div className="flex justify-between items-center max-w-full">
         {/* Logo Section with Transparent Background */}
         <div className="text-2xl font-bold hover:scale-105 duration-200">
-          <Link to="/">VR Resumes</Link>
+          <Link to="/home">VR Resumes</Link>
         </div>
 
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-6 text-lg">
           <li className="hover:scale-110 duration-200">
-            <Link to="/" className="hover:text-gray-200 transition duration-200 ">
+            <Link to="/home" className="hover:text-gray-200 transition duration-200 ">
               Home
             </Link>
           </li>

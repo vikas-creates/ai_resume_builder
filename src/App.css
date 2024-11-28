@@ -61,3 +61,25 @@ body {
   color: #333; /* Default text color */
   font-family: 'Arial', sans-serif; /* Default font */
 }
+
+
+.cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+  }
+  
+  .cont::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/resume_pic.png');
+    background-size: cover;
+    /* background-position: center; */
+    filter: blur(10px);
+    z-index: -1; /* Places the blurred background behind the content */
+  }

@@ -1,7 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
 const Contact = () => {
   return (
     <>
+    <Navbar/>
     <div>
     <section class="bg-white dark:bg-gray-900">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -25,6 +28,7 @@ const Contact = () => {
         </div>
     </section>
     </div>
+    <Footer/>
     </>
   )
 }
