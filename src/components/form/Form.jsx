@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
+import Form_template from './Form_template'
 
 export default function Form() {
     const [openModal, setOpenModal] = useState(1)
@@ -7,10 +10,11 @@ export default function Form() {
     }
   return (
     <div>
+      <Navbar/>
         { openModal == 1 &&
-
-            <div class="bg-gray-100 rounded-2xl border-4 border-gray-700 mt-20 max-w-4xl mx-auto font-[sans-serif] p-6">
-      <h1 className='text-center text-3xl font-semibold mb-10 mt-4'>Fill Up Your Resume</h1>
+        <div className="flex justify-between gap-4">
+            <div class="ml-20 flex-1 mb-5 max-w-4xl font-[sans-serif] p-6">
+      <h1 className=' text-3xl font-semibold mb-10 mt-4'>Fill Up Your Resume</h1>
 
       <form>
             <h1 className='text-2xl font-semibold mb-10'>General Details</h1>
@@ -27,14 +31,6 @@ export default function Form() {
             <label class="text-gray-800 text-sm mb-2 block">Address</label>
             <input name="address" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Address" />
           </div>
-           <div>
-            <label class="text-gray-800 text-sm mb-2 block">Portfolio Link</label>
-            <input name="portfolio" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Link" />
-          </div>
-           <div>
-            <label class="text-gray-800 text-sm mb-2 block">Github Link</label>
-            <input name="github" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Link" />
-          </div>
           <div>
             <label class="text-gray-800 text-sm mb-2 block">Email Id</label>
             <input name="email" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Email" />
@@ -42,6 +38,14 @@ export default function Form() {
           <div>
             <label class="text-gray-800 text-sm mb-2 block">Mobile No.</label>
             <input name="number" type="number" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter mobile number" />
+          </div>
+           <div>
+            <label class="text-gray-800 text-sm mb-2 block">Portfolio Link</label>
+            <input name="portfolio" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Link" />
+          </div>
+           <div>
+            <label class="text-gray-800 text-sm mb-2 block">Github Link</label>
+            <input name="github" type="text" class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all" placeholder="Enter Link" />
           </div>
           <div>
             <label class="text-gray-800 text-sm mb-2 block">Summary</label>
@@ -57,13 +61,16 @@ export default function Form() {
         </div>
       </form>
     </div>
+   <Form_template/>
+  
+        </div>
         }
     {
         openModal == 2 &&
         
-        
-       <div class="bg-gray-100 rounded-2xl border-4 border-gray-700 mt-20 max-w-4xl mx-auto font-[sans-serif] p-6">
-      <h1 className='text-center text-3xl font-semibold mb-10 mt-4'> Fill Up Your Resume</h1>
+        <div className="flex justify-between gap-4">
+       <div class="ml-20 flex-1 mb-5 max-w-4xl font-[sans-serif] p-6">
+      <h1 className=' text-3xl font-semibold mb-10 mt-4'> Fill Up Your Resume</h1>
 
       <form>
         <h1 className='text-2xl font-semibold mb-10'>Education</h1>
@@ -154,11 +161,17 @@ export default function Form() {
         </div>
       </form>
     </div>
+    <div>
+
+    <Form_template/>
+    <Form_template/>
+    </div>
+    </div>
     }
      { openModal == 3 &&
-
-            <div class="bg-gray-100 rounded-2xl border-4 border-gray-700 mt-20 max-w-4xl mx-auto font-[sans-serif] p-6">
-      <h1 className='text-center text-3xl font-semibold mb-10 mt-4'>Fill Up Your Resume</h1>
+<div className="flex justify-between gap-4">
+            <div class=" flex-1 max-w-4xl ml-20 font-[sans-serif] p-6">
+      <h1 className=' text-3xl font-semibold mb-10 mt-4'>Fill Up Your Resume</h1>
 
       <form>
             <h1 className='text-2xl font-semibold mb-5'>Experience</h1>
@@ -248,7 +261,14 @@ export default function Form() {
         </div>
       </form>
     </div>
+    <div>
+      <Form_template/>
+      <Form_template/>
+      <Form_template/>
+    </div>
+    </div>
         }
+        <Footer/>
     </div>
   )
 }
