@@ -4,13 +4,13 @@ import TemplateCard from "./TemplateCard";
 const TemplatesPage = ({ category }) => {
   // Sample data
   const fresherTemplates = [
-    { id: 1, title: "Fresher Template 1", description: "Simple and modern.", image: "/path/to/image1.jpg" },
-    { id: 2, title: "Fresher Template 2", description: "Professional and sleek.", image: "/path/to/image2.jpg" },
+    { id: 1, title: "Fresher Template 1", description: "Simple and modern.", image: "/image1.png" },
+    { id: 2, title: "Fresher Template 2", description: "Professional and sleek.", image: "/image2.jpg" },
   ];
 
   const experiencedTemplates = [
-    { id: 1, title: "Experienced Template 1", description: "Elegant and functional.", image: "/path/to/image3.jpg" },
-    { id: 2, title: "Experienced Template 2", description: "Highly customizable.", image: "/path/to/image4.jpg" },
+    { id: 1, title: "Experienced Template 1", description: "Elegant and functional.", image: "/image3.png" },
+    { id: 2, title: "Experienced Template 2", description: "Highly customizable.", image: "/image4.jpg" },
   ];
 
   // Decide which templates to render based on the category

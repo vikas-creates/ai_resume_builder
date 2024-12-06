@@ -11,9 +11,8 @@ const TemplateCard = ({ id, title, description, image }) => {
   return (
     <div
       onClick={handleCardClick}
-      className="bg-white rounded shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer"
-    >
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      className="bg-white rounded shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer">
+      <img src={image} alt={title} className="w-full h-48 object-cover object-top" />
       <div className="p-4">
         <h3 className="text-lg font-bold mb-2">{title}</h3>
         <p className="text-gray-600 text-sm">{description}</p>

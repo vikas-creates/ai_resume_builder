@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{js,jsx,ts,tsx}', './public/index.html',
   ],
   darkMode: 'class',
   theme: {
@@ -48,6 +49,6 @@ export default {
   'Noto Color Emoji'
 ]
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }
 

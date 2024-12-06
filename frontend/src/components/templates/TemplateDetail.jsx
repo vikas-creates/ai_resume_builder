@@ -1,7 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import UseTemplateButton from "../useTemplateButton/UseTemplateButton";
 
 const TemplateDetail = () => {
+  const location = useLocation();
+  // Extract template data from the state passed by TemplateCard
+  const { title, description, image } = location.state || {};
+  
   const { id } = useParams();
 
   return (
@@ -444,9 +450,20 @@ LLM/AI Prompting
     </main>
     </div>
 
-      <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600">
+    <UseTemplateButton
+    title={title}
+    description={description}
+    image={image}/>
+
+    {/* <div className="flex justify-center">
+      <button 
+      className="mt-4 px-4 py-2 bg-blue-500 text-white rounded shadow hover:bg-blue-600"
+   
+      >
         Use This Template
       </button>
+    </div> */}
+      
     </div>
   );
 };

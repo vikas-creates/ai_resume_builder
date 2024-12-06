@@ -5,9 +5,8 @@ export default function Register() {
   return (
     <div>
 		<div className="cont">
-
         <div className="sub-cont min-h-screen flex flex-col justify-center">
-	<div className="relative py-3 sm:max-w-xl sm:mx-auto">
+		<div className="relative py-3 sm:max-w-xl sm:mx-auto">
 			<div 
 			className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
 			</div>
