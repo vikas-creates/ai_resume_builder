@@ -6,8 +6,10 @@ const TemplateCard = ({ id, title, description, image }) => {
 
   const handleCardClick = () => {
     navigate(`/templates/detail/${id}`);
+    // Optionally call the onSelect handler if you want to track the selected template
+    onSelect(id);
   };
-
+          
   return (
     <div
       onClick={handleCardClick}
