@@ -2,12 +2,74 @@ import React, { useState } from "react"
 import Navbar from "../Navbar"
 import Footer from "../Footer"
 import Form_template from "./Form_template"
+import axios from "axios"
 
 export default function Form() {
 	const [openModal, setOpenModal] = useState(1)
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		designation: "",
+		address: "",
+		mobile: "",
+		portfolioLink: "",
+		githubLink: "",
+		XschoolName: "",
+		Xschoolperc: "",
+		XschoolSYear: "",
+		XschoolEYear: "",
+		XIIschoolName: "",
+		XIIschoolPerc: "",
+		XIIschoolSYear: "",
+		XIIschoolEYear: "",
+		degreeCollegeName: "",
+		degreeCollegePerc: "",
+		degreeCollegeSYear: "",
+		degreeCollegeEYear: "",
+		masterDegreeCollegeName: "",
+		masterDegreeCollegePerc: "",
+		masterDegreeCollegeSYear: "",
+		masterDegreeCollegeEYear: "",
+		skill: "",
+		IexpDesignation: "",
+		IexpCompany: "",
+		IexpSYear: "",
+		IexpEYear: "",
+		IexpRole: "",
+		IIexpDesignation: "",
+		IIexpCompany: "",
+		IIexpSYear: "",
+		IIexpEYear: "",
+		IIexpRole: "",
+		IIIexpDesignation: "",
+		IIIexpCompany: "",
+		IIIexpSYear: "",
+		IIIexpEYear: "",
+		IIIexpRole: "",
+		summary: "",
+	})
 	const OpenModal = (modalNumber) => {
 		setOpenModal(modalNumber)
 	}
+
+	const handleChange = async (e) => {
+		const { name, value } = e.target
+		const updatedData = { ...formData, [name]: value }
+
+		setFormData(updatedData)
+
+		// Automatically send updated data to API
+		try {
+			const response = await axios.post(
+				"http://localhost:9000/form/add",
+				updatedData
+			)
+			console.log("Data sent successfully:", response.data)
+		} catch (error) {
+			console.error("Error sending data:", error)
+		}
+	}
+
 	return (
 		<div>
 			<Navbar />
@@ -30,6 +92,8 @@ export default function Form() {
 									<input
 										name="name"
 										type="text"
+										value={formData.name}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Full Name"
 									/>
@@ -41,6 +105,8 @@ export default function Form() {
 									<input
 										name="designation"
 										type="text"
+										value={formData.designation}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Designation"
 									/>
@@ -52,6 +118,8 @@ export default function Form() {
 									<input
 										name="address"
 										type="text"
+										value={formData.address}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Address"
 									/>
@@ -63,6 +131,8 @@ export default function Form() {
 									<input
 										name="email"
 										type="text"
+										value={formData.email}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Email"
 									/>
@@ -72,8 +142,10 @@ export default function Form() {
 										Mobile No.
 									</label>
 									<input
-										name="number"
+										name="mobile"
 										type="number"
+										value={formData.mobile}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter mobile number"
 									/>
@@ -83,8 +155,10 @@ export default function Form() {
 										Portfolio Link
 									</label>
 									<input
-										name="portfolio"
+										name="portfolioLink"
 										type="text"
+										value={formData.portfolioLink}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Link"
 									/>
@@ -94,8 +168,10 @@ export default function Form() {
 										Github Link
 									</label>
 									<input
-										name="github"
+										name="githubLink"
 										type="text"
+										value={formData.githubLink}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Link"
 									/>
@@ -137,8 +213,10 @@ export default function Form() {
 										School Name
 									</label>
 									<input
-										name="tenth"
+										name="XschoolName"
 										type="text"
+										value={formData.XschoolName}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter School Name"
 									/>
@@ -148,8 +226,10 @@ export default function Form() {
 										Percentage
 									</label>
 									<input
-										name="tenthP"
+										name="XschoolPerc"
 										type="text"
+										value={formData.XschoolPerc}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter in percentage"
 									/>
@@ -159,8 +239,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="tenthSY"
+										name="XschoolSYear"
 										type="text"
+										value={formData.XschoolSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2018)"
 									/>
@@ -170,8 +252,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="tenthLY"
+										name="XschoolEYear"
 										type="text"
+										value={formData.XschoolEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -186,8 +270,10 @@ export default function Form() {
 										School/Institution Name
 									</label>
 									<input
-										name="twelth"
+										name="XIIschoolName"
 										type="text"
+										value={formData.XIIschoolName}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter School Name"
 									/>
@@ -197,8 +283,10 @@ export default function Form() {
 										Percentage
 									</label>
 									<input
-										name="twelthP"
+										name="XIIschoolPerc"
 										type="text"
+										value={formData.XIIschoolPerc}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter in percentage"
 									/>
@@ -208,8 +296,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="twelthSY"
+										name="XIIschoolSYear"
 										type="text"
+										value={formData.XIIschoolSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2018)"
 									/>
@@ -219,8 +309,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="twelthLY"
+										name="XIIschoolEYear"
 										type="text"
+										value={formData.XIIschoolEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -235,8 +327,10 @@ export default function Form() {
 										College Name
 									</label>
 									<input
-										name="college"
+										name="degreeCollegeName"
 										type="text"
+										value={formData.degreeCollegeName}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter College Name"
 									/>
@@ -246,8 +340,10 @@ export default function Form() {
 										Percentage
 									</label>
 									<input
-										name="collegeP"
+										name="degreeCollegePerc"
 										type="text"
+										value={formData.degreeCollegePerc}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter in percentage"
 									/>
@@ -257,8 +353,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="collegeSY"
+										name="degreeCollegeSYear"
 										type="text"
+										value={formData.degreeCollegeSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2018)"
 									/>
@@ -268,8 +366,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="collegeLY"
+										name="degreeCollegeEYear"
 										type="text"
+										value={formData.degreeCollegeEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -284,8 +384,10 @@ export default function Form() {
 										College Name
 									</label>
 									<input
-										name="collegeM"
+										name="masterDegreeCollegeName"
 										type="text"
+										value={formData.masterDegreeCollegeName}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter College Name"
 									/>
@@ -295,8 +397,10 @@ export default function Form() {
 										Percentage
 									</label>
 									<input
-										name="collegeMP"
+										name="masterDegreeCollegePerc"
 										type="text"
+										value={formData.masterDegreeCollegePerc}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter in percentage"
 									/>
@@ -306,8 +410,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="collegeMSY"
+										name="masterDegreeCollegeSYear"
 										type="text"
+										value={formData.masterDegreeCollegeSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2018)"
 									/>
@@ -317,8 +423,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="collegeMLY"
+										name="masterDegreeCollegeEYear"
 										type="text"
+										value={formData.masterDegreeCollegeEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -367,6 +475,8 @@ export default function Form() {
 									<input
 										name="skills"
 										type="text"
+										value={formData.XschoolName}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Your Skills"
 									/>
@@ -381,8 +491,10 @@ export default function Form() {
 										Designation
 									</label>
 									<input
-										name="designation"
+										name="IexpDesignation"
 										type="text"
+										value={formData.IexpDesignation}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Designation"
 									/>
@@ -392,8 +504,10 @@ export default function Form() {
 										Company
 									</label>
 									<input
-										name="company"
+										name="IexpCompany"
 										type="text"
+										value={formData.IexpCompany}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Company"
 									/>
@@ -403,8 +517,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="FSY"
+										name="IexpSYear"
 										type="text"
+										value={formData.IexpSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -414,8 +530,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="FLY"
+										name="IexpEYear"
 										type="text"
+										value={formData.IexpEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2020)"
 									/>
@@ -425,8 +543,10 @@ export default function Form() {
 										Role in Company
 									</label>
 									<textarea
-										name="Frole"
+										name="IexpRole"
 										type="text"
+										value={formData.IexpRole}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Your Role in Company"
 									/>
@@ -441,8 +561,10 @@ export default function Form() {
 										Designation
 									</label>
 									<input
-										name="designation"
+										name="IIexpDesignation"
 										type="text"
+										value={formData.IIexpDesignation}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Designation"
 									/>
@@ -452,8 +574,10 @@ export default function Form() {
 										Company
 									</label>
 									<input
-										name="company"
+										name="IIexpCompany"
 										type="text"
+										value={formData.IIexpCompany}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Company"
 									/>
@@ -463,8 +587,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="FSY"
+										name="IIexpSYear"
 										type="text"
+										value={formData.IIexpSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -474,8 +600,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="FLY"
+										name="IIexpEYear"
 										type="text"
+										value={formData.IIexpEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2020)"
 									/>
@@ -485,8 +613,10 @@ export default function Form() {
 										Role in Company
 									</label>
 									<textarea
-										name="Frole"
+										name="IIexpRole"
 										type="text"
+										value={formData.IIexpRole}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Your Role in Company"
 									/>
@@ -501,8 +631,10 @@ export default function Form() {
 										Designation
 									</label>
 									<input
-										name="designation"
+										name="IIIexpDesignation"
 										type="text"
+										value={formData.IIIexpDesignation}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Designation"
 									/>
@@ -512,8 +644,10 @@ export default function Form() {
 										Company
 									</label>
 									<input
-										name="company"
+										name="IIIexpCompany"
 										type="text"
+										value={formData.IIIexpCompany}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Company"
 									/>
@@ -523,8 +657,10 @@ export default function Form() {
 										Starting Year
 									</label>
 									<input
-										name="FSY"
+										name="IIIexpSYear"
 										type="text"
+										value={formData.IIIexpSYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2019)"
 									/>
@@ -534,8 +670,10 @@ export default function Form() {
 										Ending Year
 									</label>
 									<input
-										name="FLY"
+										name="IIIexpEYear"
 										type="text"
+										value={formData.IIIexpEYear}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Example (2020)"
 									/>
@@ -545,12 +683,30 @@ export default function Form() {
 										Role in Company
 									</label>
 									<textarea
-										name="Frole"
+										name="IIIexpRole"
 										type="text"
+										value={formData.IIIexpRole}
+										onChange={handleChange}
 										class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
 										placeholder="Enter Your Role in Company"
 									/>
 								</div>
+							</div>
+							<h1 className="text-xl font-semibold mb-5 mt-10">
+								3. About Me
+							</h1>
+							<div>
+								<label class="text-gray-800 text-sm mb-2 block">
+									Summary
+								</label>
+								<textarea
+									name="summary"
+									type="text"
+									value={formData.summary}
+									onChange={handleChange}
+									class="bg-gray-200 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+									placeholder="Summary About Yourself"
+								/>
 							</div>
 
 							<div class="!mt-12 gap-4 flex">

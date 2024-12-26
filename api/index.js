@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import dotenv from "dotenv"
 import UserRoute from "./Routes/User.route.js"
 import FormRouter from "./Routes/Form.route.js"
+import cors from "cors"
 
 const app = express()
 dotenv.config()
@@ -15,6 +16,7 @@ const connect = async () => {
 		throw err
 	}
 }
+app.use(cors({ origin: "http://localhost:5173" }))
 
 mongoose.connection.on("disconnected", () => {
 	console.log("MongoDB is disconnected")

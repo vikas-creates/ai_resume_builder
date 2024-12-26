@@ -49,23 +49,23 @@ const experienceSchema = new mongoose.Schema({
 const formSchema = new mongoose.Schema({
 	fullname: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	designation: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	address: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	email: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	mobile: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	portfolio: {
 		type: String,
@@ -93,6 +93,9 @@ const formSchema = new mongoose.Schema({
 	},
 	experience: {
 		type: [experienceSchema],
+	},
+	summary: {
+		type: String,
 	},
 })
 
